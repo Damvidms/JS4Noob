@@ -1,13 +1,15 @@
-let form = document.getElementsByTagName("form")[0]
+let form = document.getElementsByTagName("form")[0];
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", function (e) {
     e.preventDefault();
-    let correo = document.getElementById("username").value
-    let contrasenya = document.getElementById("password").value
 
     let formData = new FormData(this);
 
-    fetch("../PHP/Inicio.php", {
+    formData.forEach((dato) => {
+        console.log(dato);
+    });
+
+    fetch("../PHP/registro.php", {
         method: "POST",
         body: formData
     })
@@ -20,5 +22,4 @@ form.addEventListener("submit", (e) => {
             }
         })
         .catch(error => console.error("Error:", error));
-
-})
+});

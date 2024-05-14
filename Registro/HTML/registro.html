@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="../CSS/Inicio.css">
+    <link rel="stylesheet" href="../CSS/registro.css">
 </head>
 
 <body>
@@ -24,24 +24,28 @@
         </header>
         <div class="grid-container">
             <div class="login-container">
-                <h2>Iniciar Sesión</h2>
-                <form class="login-form">
+                <h2>Registrate</h2>
+                <form class="login-form" method="post">
                     <div class="form-group">
-                        <label for="username">Usuario:</label>
-                        <input type="text" id="username" name="username" required>
+                        <label for="nickname">Usuario:</label>
+                        <input type="text" id="nickname" name="nickname" required>
                     </div>
                     <div class="form-group">
-                        <label for="password">Contraseña:</label>
-                        <input type="password" id="password" name="password" required>
+                        <label for="correo">Correo:</label>
+                        <input type="text" id="correo" name="correo" required>
                     </div>
                     <div class="form-group">
-                        <button type="submit">Iniciar Sesión</button>
+                        <label for="contrasenya">Contraseña:</label>
+                        <input type="password" id="contrasenya" name="contrasenya" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Registrate</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </body>
-<script src="../JS/Inicio.js"></script>
+<script src="../JS/registro.js"></script>
 
 </html>
