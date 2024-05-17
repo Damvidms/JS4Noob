@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Judge Example</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+  <script>
+    const RESULT_CODE = {
+      AC: 'AC',
+      WA: 'WA',
+      CE: 'CE',
+      RE: 'RE',
+      TLE: 'TLE'
+    }
+
+    class Judge {
+      constructor(schema, functionCode, timeout = 3000) {
+        this.schema = schema;
+        this.functionCode = functionCode;
+        this.timeout = timeout;
+      }
+
+      t(any) {
+        return JSON.stringify(any);
+      }
+
+      addWrapper(schema, code, testCase) {
+        return `
+          ${code}
+          (() => _.isEqual(${schema.funcName}.apply(null, ${this.t(testCase.input)}), ${this.t(testCase.output)}))()
+        `;
+      }
+
+      runTest(testCase) {
+        try {
+          eval(this.functionCode);
+        } catch (e) {
+          return RESULT_CODE.RE;
+        }
+
+        const wrapperedCode = this.addWrapper(this.schema, this.functionCode, testCase);
+        try {
+          let result;
+          const executeWithTimeout = () => {
+            return new Promise((resolve, reject) => {
+              const timer = setTimeout(() => {
+                reject(new Error('Script execution timed out.'));
+              }, this.timeout);
+
+              try {
+                result = eval(wrapperedCode);
+                clearTimeout(timer);
+                resolve(result);
+              } catch (err) {
+                clearTimeout(timer);
+                reject(err);
+              }
+            });
+          };
+
+          return executeWithTimeout().then(
+            (result) => result ? RESULT_CODE.AC : RESULT_CODE.WA,
+            (error) => error.message === 'Script execution timed out.' ? RESULT_CODE.TLE : RESULT_CODE.WA
+          );
+        } catch (e) {
+          console.log('err', e);
+          return e.message === 'Script execution timed out.' ? RESULT_CODE.TLE : RESULT_CODE.WA;
+        }
+      }
+
+      async run() {
+        const testCases = this.schema.testCases;
+        const testResult = await Promise.all(testCases.map(testCase => this.runTest(testCase)));
+        const correctCount = testResult.reduce((sum, res) => sum + (res === 'AC' ? 1 : 0), 0);
+        return {
+          score: Math.ceil(correctCount * (100 / testResult.length)),
+          result: testResult
+        };
+      }
+    }
+
+    const test1 = {
+      input: [1, 2],
+      output: 3
+    }
+
+    const test2 = {
+      input: [2, 4],
+      output: 6
+    }
+
+    const problemSchema = {
+      funcName: 'add',
+      testCases: [test1, test2]
+    }
+
+    const input = `function add(a, b){
+      return a + b;
+    }`
+
+    const judge = new Judge(problemSchema, input);
+    judge.run().then(result => console.log(result));
+  </script>
+</head>
+
+<body>
+  <h1>Judge Example</h1>
+</body>
+
+</html>

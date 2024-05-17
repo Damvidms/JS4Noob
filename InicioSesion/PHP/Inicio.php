@@ -16,31 +16,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Conexión fallida: " . $conn->connect_error);
     }
 
-    $query = "SELECT * FROM Usuarios WHERE nickname = '$nickname'";
+    $query = "SELECT * FROM usuario WHERE nickname = '$nickname'";
     $result = $conn->query($query);
 
     if ($result->num_rows > 0) {
 
         $row = $result->fetch_assoc();
-        $hashContrasenya = $row["Contraseña"];
+        $hashContrasenya = $row["contrasenya"];
 
         if (password_verify($contrasenya, $hashContrasenya)) {
 
-
-            $_SESSION["nombreUsuario"] = $row["Nombre"];
-            if ($row["Admin"] == 1) {
-                header("Location: ../../../AdminDashboard/AdminDashboard.html");
-                exit();
-            } else {
-                header("Location: ../../../Code/content/HTML/content.html");
-                exit();
-            }
+            echo json_encode(array("success" => true));
 
         } else {
-            echo "Error: Contraseña incorrecta.";
+            echo json_encode(array("success" => false, "message" => "Error: Contraseña incorrecta"));
         }
     } else {
-        echo "Error: Correo electrónico no encontrado.";
+        echo json_encode(array("success" => false, "message" => "Error: nickname incorrecto"));
     }
 
     $conn->close();

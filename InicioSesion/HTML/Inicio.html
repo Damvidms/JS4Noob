@@ -10,22 +10,33 @@
 
 <body>
     <div class="page-container">
+        <div class="top-header">
+            <nav class="nav2">
+                <ul class="nav-list2">
+                    <li class="nav-item2"><a href="#"><img class="sinborde2" src="../../img/llamada-telefonica.png"> +34
+                            608 388 642</a>
+                    </li>
+                    <li class="nav-item2"><a href="#"><img class="sinborde2" src="../../img/sobre.png">
+                            JS4Noob@gmail.com</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
         <header class="header">
             <div class="logo"><img src="../../logo.jpg"></div>
             <nav class="nav">
                 <ul class="nav-list">
                     <li class="nav-item"><a href="#">Inicio</a></li>
-                    <li class="nav-item"><a href="#">Servicios</a></li>
                     <li class="nav-item"><a href="#">Acerca de</a></li>
-                    <li class="nav-item"><a href="#">Contacto</a></li>
+                    <li class="nav-item"><a href="#">Log out</a></li>
                 </ul>
             </nav>
-            <div class="search">Buscar</div>
+            <div class="search"><img class="sinborde" src="../../img/busqueda.png"></div>
         </header>
         <div class="grid-container">
             <div class="login-container">
                 <h2>Iniciar Sesión</h2>
-                <form class="login-form">
+                <form class="login-form" method="post">
                     <div class="form-group">
                         <label for="username">Usuario:</label>
                         <input type="text" id="username" name="username" required>
@@ -36,6 +47,8 @@
                     </div>
                     <div class="form-group">
                         <button type="submit">Iniciar Sesión</button>
+                        <label class="sesion">¿No tienes una cuenta?</label>
+                        <a href="../../Registro/HTML/registro.html" class="sesion">Ir a registro</a>
                     </div>
                 </form>
             </div>

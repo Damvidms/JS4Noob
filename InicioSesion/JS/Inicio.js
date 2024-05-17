@@ -1,11 +1,13 @@
-let form = document.getElementsByTagName("form")[0]
+let form = document.getElementsByTagName("form")[0];
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", function (e) {
     e.preventDefault();
-    let correo = document.getElementById("username").value
-    let contrasenya = document.getElementById("password").value
 
     let formData = new FormData(this);
+
+    formData.forEach((dato) => {
+        console.log(dato);
+    });
 
     fetch("../PHP/Inicio.php", {
         method: "POST",
@@ -13,6 +15,7 @@ form.addEventListener("submit", (e) => {
     })
         .then(response => response.json())
         .then(data => {
+            console.log(data)
             if (data.success) {
                 window.location.href = "../../Main/HTML/main.html";
             } else {
@@ -20,5 +23,4 @@ form.addEventListener("submit", (e) => {
             }
         })
         .catch(error => console.error("Error:", error));
-
-})
+});
