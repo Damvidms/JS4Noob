@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Judge Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script src="judge.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <h1>Judge Example</h1>
+    <div id="description"></div>
+    <div id="input"></div>
+    <form onsubmit="hevaluate(); return false;">
+        <label for="functionCode">Enter your function code:</label><br>
+        <textarea id="functionCode" rows="10" cols="50">function add(a, b) {
+    return a + b;
+}</textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
