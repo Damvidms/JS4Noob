@@ -2,7 +2,7 @@ async function fetchExercise() {
     try {
         const response = await fetch('getExercise.php', {
             method: 'POST',
-            body: new URLSearchParams(), // Puedes enviar parámetros si es necesario
+            body: new URLSearchParams(), 
         });
         if (!response.ok) {
             throw new Error('Network response was not ok');
