@@ -19,8 +19,8 @@ submitButton.addEventListener('click', () => {
             console.log('Input values:', inputValues);
             const expectedOutput = exercise.expectedOutput;
             console.log('Expected output:', expectedOutput);
-
-            // Remover la declaración de la función si existe
+            //
+            // ReFmover la declaración de la función si existe
             userFunctionCode = userFunctionCode.replace(/function\s*\w*\([^)]*\)\s*\{/, '').replace(/\}$/, '');
             console.log('Processed user function code:', userFunctionCode);
 
@@ -31,8 +31,11 @@ submitButton.addEventListener('click', () => {
                 console.log('User function:', userFunction);
 
                 const result = userFunction.apply(null, inputValues);
-                console.log('Result:', result);
-                if (toString(result) == toString(expectedOutput)) {
+                console.log(result)
+                const resultString = String(result);
+
+
+                if (resultString == expectedOutput) {
                     resultParagraph.textContent = '¡Correcto!';
                 } else {
                     resultParagraph.textContent = `Incorrecto. La respuesta correcta es ${expectedOutput}, pero obtuve ${result}.`;
