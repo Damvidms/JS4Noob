@@ -23,7 +23,7 @@ async function hevaluate() {
         console.log('Exercise:', exercise);
 
         // Parsear el input del ejercicio como JSON
-        const input = JSON.parse(exercise.input);
+        const input = JSON.parse(JSON.parse(exercise.input));
         console.log('Input:', input);
 
         // Construir el esquema del ejercicio
