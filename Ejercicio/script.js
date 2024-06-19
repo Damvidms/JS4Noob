@@ -25,6 +25,7 @@ submitButton.addEventListener('click', () => {
             if (userFunctionCode.startsWith('function')) {
                 userFunctionCode = userFunctionCode.replace(/function\s*\w*\([^)]*\)\s*\{/, '').replace(/\}$/, '');
             }
+            
             console.log('Processed user function code:', userFunctionCode);
 
             try {
