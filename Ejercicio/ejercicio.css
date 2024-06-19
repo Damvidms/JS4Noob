@@ -5,19 +5,24 @@ html {
     width: 100%;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-image: url(../fondo.jpg);
-    background-size: cover;
-    background-position: center;
-    display: flex;
+}
+
+body {
+    display: block;
     justify-content: center;
     align-items: center;
+    background-color: #000000;
+    overflow: scroll;
+
 }
+
 
 img {
     height: 50px;
     width: 50px;
     border: 2px solid #fffb00;
 }
+
 
 .top-header {
     height: 30px;
@@ -38,6 +43,17 @@ img {
     height: 20px;
 }
 
+.sinborde3 {
+    border: 0px solid transparent;
+    width: 100%;
+    /* La imagen ocupa todo el ancho del div */
+    height: 100%;
+    /* La imagen ocupa todo el alto del div */
+    object-fit: cover;
+    /* La imagen se ajusta para cubrir el div sin distorsión */
+    display: block;
+}
+
 .page-container {
     display: grid;
     grid-template-rows: auto 1fr;
@@ -45,17 +61,6 @@ img {
     height: 100%;
 }
 
-.header {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
-    background-color: #000000;
-    color: #fffb00;
-    box-sizing: border-box;
-    height: 100px;
-}
 
 .logo {
     font-size: 24px;
@@ -104,6 +109,18 @@ img {
 
 }
 
+.header {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #000000;
+    color: #fffb00;
+    box-sizing: border-box;
+    height: 100px;
+}
+
 .e {
     color: black;
 }
@@ -112,81 +129,79 @@ img {
     justify-self: end;
 }
 
+.neon-label {
+    font-size: 30px;
+    /* Tamaño de fuente del texto */
+    color: #000000;
+    /* Color del texto */
+    text-shadow: 0 0 10px #ffea00, 0 0 20px #ffea00, 0 0 30px #ffea00, 0 0 40px;
+    /* Propiedad de sombra para el efecto de neón */
+    margin-top: 20px;
+}
+
+.neon-border {
+
+    /* Alto del div */
+    background-color: black;
+    /* Color de fondo */
+    border-radius: 20px;
+    /* Radio de borde para suavizar las esquinas */
+    box-shadow: 0 0 10px #ffea00, 0 0 20px #ffea00, 0 0 30px #ffea00, 0 0 40px #ffea00;
+    /* Propiedad de sombra para el efecto de neón */
+}
+
 .grid-container {
     display: grid;
-    place-items: center;
-    /* Centra el contenido dentro de la cuadrícula */
     width: 100%;
     height: 100%;
-    /* Fondo semitransparente */
-    padding: 90px;
+    gap: 45px;
+    background-color: #000000;
+    padding: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 170px auto auto;
     box-sizing: border-box;
-}
-
-.login-container {
-    width: 300px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: 8px solid #fffb00;
-    background-color: #000000;
+    background-image: url(../fondo.jpg);
 
 }
 
-.login-form {
+.item {
+
+    border: 1px solid #000;
+    font-size: 30px;
+    text-align: center;
     display: grid;
-    gap: 30px;
-
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
 }
 
-.form-group {
-    display: grid;
-    gap: 5px;
+
+
+
+.item4 {
+    grid-column: 1 / 5;
+    grid-row: 2 / 4;
+    background-color: #ffea0022;
 }
 
-label {
+
+.logo {
+    font-size: 24px;
     font-weight: bold;
-    text-align: justify;
-    /* Centra el texto dentro del label */
-    color: white;
 }
 
-.sesion {
-    text-align: center;
+.nav {
+    justify-self: center;
 }
 
-h2 {
-    text-align: center;
-    color: white;
-    /* Centra el texto del título */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
 }
 
-label {
-    text-align: center;
-    ;
-}
-
-input[type="text"],
-input[type="password"] {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-}
-
-button {
-    padding: 10px;
-    background-color: #fffb00;
-    color: #000000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    border: 2px solid black;
-    margin-bottom: 30PX;
-}
-
-button:hover {
-    background-color: #000000;
-    color: #fffb00;
+.search {
+    justify-self: end;
 }
