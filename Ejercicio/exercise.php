@@ -3,7 +3,7 @@
 $conn = new mysqli('localhost', 'root', '', 'js4noob');
 
 // Consulta SQL para seleccionar un ejercicio aleatorio
-$sql = "SELECT * FROM ejercicio WHERE id = 2";
+$sql = "SELECT * FROM ejercicio WHERE id = 1";
 $result = $conn->query($sql);
 
 // Si hay resultados
