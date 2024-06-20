@@ -82,6 +82,8 @@ submitButton.addEventListener('click', () => {
 
                 if (resultString == expectedOutput) {
                     resultParagraph.textContent = '¡Correcto!';
+                    Draw();
+                    setTimeout(clearCanvas, 5000);
                 } else {
                     resultParagraph.textContent = `Incorrecto. La respuesta correcta es ${expectedOutput}, pero obtuve ${result}.`;
                 }
