@@ -19,6 +19,5 @@ if ($result->num_rows > 0) {
     http_response_code(500);
     echo json_encode(array('error' => 'No hay ejercicios disponibles'));
 }
-
 $conn->close();
 ?>

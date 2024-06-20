@@ -4,7 +4,7 @@ const resultParagraph = document.getElementById('result');
 const seccion = document.getElementById('seccion');
 const descripcion = document.getElementById('descripcion');
 
-
+let divEjercicio = document.getElementById("infoEjercicio")
 
 window.addEventListener('load', () => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -18,7 +18,22 @@ window.addEventListener('load', () => {
     })
         .then(response => response.json())
         .then(data => {
-            console.log(data)
+            let labelTitulo = document.createElement("label");
+            labelTitulo.textContent = data.seccion;
+            labelTitulo.setAttribute("id", "titulo")
+            divEjercicio.append(labelTitulo)
+
+            let labelinfo = document.createElement("label");
+            labelinfo.textContent = data.descripcion;
+            labelinfo.setAttribute("id", "info")
+            divEjercicio.append(labelinfo)
+
+            let labelinfo2 = document.createElement("label");
+            labelinfo2.textContent = "Los parametros de la funcion son " + data.inputParams + " que tienen valor/s de " + data.inputValues;
+            labelinfo2.setAttribute("id", "info2")
+            divEjercicio.append(labelinfo2)
+
+
         })
 
 });

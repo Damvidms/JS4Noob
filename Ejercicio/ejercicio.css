@@ -38,6 +38,19 @@ textarea {
     text-align: center;
     padding: 40px;
     font-size: large;
+    margin-top: 50px;
+}
+
+#info {
+    color: white;
+}
+
+#info2 {
+    color: white;
+}
+
+#titulo {
+    color: white;
 }
 
 #submit {
@@ -216,12 +229,13 @@ textarea {
 .item3 {
     grid-column: 1 / 5;
     grid-row: 1;
-    background-color: #ffea0022;
+    background-color: #645c0080;
 }
 
 
 
 .item4 {
+
     grid-column: 1 / 4;
     grid-row: 2 / 4;
     background-color: #ffea0022;
