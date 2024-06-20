@@ -4,8 +4,34 @@ const resultParagraph = document.getElementById('result');
 const seccion = document.getElementById('seccion');
 const descripcion = document.getElementById('descripcion');
 
+
+
+window.addEventListener('load', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const idEjercicio = urlParams.get('id');
+    console.log(idEjercicio)
+    const formData = new FormData();
+    formData.append('id', idEjercicio);
+    fetch('exercise.php', {
+        method: 'POST',
+        body: formData
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+        })
+
+});
+
 submitButton.addEventListener('click', () => {
-    fetch('exercise.php')
+    const urlParams = new URLSearchParams(window.location.search);
+    const idEjercicio = urlParams.get('id');
+    const formData = new FormData();
+    formData.append('id', idEjercicio);
+    fetch('exercise.php', {
+        method: 'POST',
+        body: formData
+    })
         .then(response => response.json())
         .then(exercise => {
             console.log('Exercise:', exercise);
@@ -25,7 +51,7 @@ submitButton.addEventListener('click', () => {
             if (userFunctionCode.startsWith('function')) {
                 userFunctionCode = userFunctionCode.replace(/function\s*\w*\([^)]*\)\s*\{/, '').replace(/\}$/, '');
             }
-            
+
             console.log('Processed user function code:', userFunctionCode);
 
             try {
