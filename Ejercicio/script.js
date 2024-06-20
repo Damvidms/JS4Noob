@@ -1,6 +1,6 @@
 const submitButton = document.getElementById('submit');
 const userFunctionTextarea = document.getElementById('user-function');
-const resultParagraph = document.getElementById('result');
+const resultParagraph = document.getElementById('resultado');
 const seccion = document.getElementById('seccion');
 const descripcion = document.getElementById('descripcion');
 
