@@ -66,6 +66,15 @@ textarea {
     border-radius: 10px;
 }
 
+#volver {
+    background-color: rgb(33, 33, 33);
+    color: #fffb00;
+    border: 2px solid #fffb00;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
 #exercise {
     display: flex;
     flex-direction: column;

@@ -11,6 +11,7 @@ fetch("../PHP/main.php", {
             let cajaSeccion = document.createElement("label")
             cajaSeccion.textContent = element.seccion
             cajaSeccion.setAttribute("id", "progreso")
+            cajaSeccion.setAttribute("name", element.id)
             progresoArea.append(cajaSeccion);
 
             let cajaEjercicio = document.createElement("label")
@@ -88,7 +89,42 @@ fetch("../PHP/progresoActual.php", {
 
 
 
+        let progreso = Array.from(progresoArea.children)
 
+        if (data.error) {
+            console.log("error mortifero")
+
+            progreso.forEach(element => {
+                if (parseInt(element.getAttribute("name")) > 1) {
+                    element.style.pointerEvents = "none"
+                    element.textContent = "Bloqueado"
+                    element.style.backgroundColor = "#fffb00";
+                    element.style.color = "black"
+                }
+            });
+        } else {
+            console.log("todo chill no te preocupes")
+            console.log("Este es el ej ultimo " + data[0].id_ejercicio)
+
+            progreso.forEach(element => {
+
+                let id = element.getAttribute("id")
+                if (id == "progreso") {
+                    console.log(id)
+                    let name = element.getAttribute("name");
+                    console.log(name)
+
+                    if (name <= data[0].id_ejercicio) {
+                        element.style.backgroundColor = "#fffb00";
+                        element.style.color = "black"
+                        element.textContent = "Completado"
+                        element.style.pointerEvents = "none";
+                    }
+
+                }
+
+            });
+        }
 
 
 

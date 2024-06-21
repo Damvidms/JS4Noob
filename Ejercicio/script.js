@@ -5,7 +5,12 @@ const seccion = document.getElementById('seccion');
 const descripcion = document.getElementById('descripcion');
 
 let divEjercicio = document.getElementById("infoEjercicio")
+let volver = document.getElementById("volver")
 
+volver.addEventListener("click", ()=>{
+    window.location.href = "../Main/HTML/main.html"
+})
+ 
 window.addEventListener('load', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const idEjercicio = urlParams.get('id');
