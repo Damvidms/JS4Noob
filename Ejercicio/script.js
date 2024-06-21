@@ -82,8 +82,22 @@ submitButton.addEventListener('click', () => {
 
                 if (resultString == expectedOutput) {
                     resultParagraph.textContent = '¡Correcto!';
+
                     Draw();
                     setTimeout(clearCanvas, 5000);
+
+                    const formData2 = new FormData();
+                    formData2.append('id', idEjercicio);
+                    fetch('actualizarPrgreso.php', {
+                        method: 'GET',
+                        body: formData
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+
+                        })
+
+
                 } else {
                     resultParagraph.textContent = `Incorrecto. La respuesta correcta es ${expectedOutput}, pero obtuve ${result}.`;
                 }

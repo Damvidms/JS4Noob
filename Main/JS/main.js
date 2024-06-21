@@ -40,37 +40,57 @@ fetch("../PHP/progresoActual.php", {
 })
     .then(response => response.json())
     .then(data => {
-        console.log(data)
 
+        console.log(data)
+        let ejercicios = Array.from(ejercicioArea.children)
 
         if (data.error) {
             console.log("error mortifero")
+
+            ejercicios.forEach(element => {
+                if (parseInt(element.getAttribute("name")) > 1) {
+                    element.style.pointerEvents = "none"
+                    element.textContent = "Bloqueado"
+                    element.style.backgroundColor = "#fffb00";
+                    element.style.color = "black"
+                }
+            });
         } else {
             console.log("todo chill no te preocupes")
-            console.log(data[0].id_ejercicio)
+            console.log("Este es el ej ultimo " + data[0].id_ejercicio)
+
+            ejercicios.forEach(element => {
+
+                let id = element.getAttribute("id")
+                if (id == "ejercicio") {
+                    console.log(id)
+                    let name = element.getAttribute("name");
+                    console.log(name)
+
+                    if (name <= data[0].id_ejercicio) {
+                        element.style.backgroundColor = "#fffb00";
+                        element.style.color = "black"
+                        element.textContent = "Completado"
+                        element.style.pointerEvents = "none";
+                    }
+
+                    if (name > parseInt(data[0].id_ejercicio) + 1) {
+                        element.style.pointerEvents = "none"
+                        element.textContent = "Bloqueado"
+                        element.style.backgroundColor = "#fffb00";
+                        element.style.color = "black"
+                    }
+
+                }
+
+            });
         }
 
 
-        let ejercicios = Array.from(ejercicioArea.children)
 
-        ejercicios.forEach(element => {
 
-            let id = element.getAttribute("id")
-            if (id == "ejercicio") {
-                console.log(id)
-                let name = element.getAttribute("name");
-                console.log(name)
 
-                if (name <= data[0].id_ejercicio) {
-                    element.style.backgroundColor = "#fffb00";
-                    element.style.color = "black"
-                    element.textContent = "Completado -> " + element.textContent
-                    element.style.pointerEvents = "none"; // Agregamos esta línea
-                }
 
-            }
-
-        });
 
     })
     .catch(error => console.error("Error:", error));
