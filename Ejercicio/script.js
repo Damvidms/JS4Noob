@@ -85,11 +85,13 @@ submitButton.addEventListener('click', () => {
 
                     Draw();
                     setTimeout(clearCanvas, 5000);
-
+                    console.log(idEjercicio + " holaaaaaaaaaaa")
                     const formData2 = new FormData();
                     formData2.append('id', idEjercicio);
-                    fetch('actualizarPrgreso.php', {
-                        method: 'GET',
+
+
+                    fetch('actualizarProgreso.php', {
+                        method: 'POST',
                         body: formData
                     })
                         .then(response => response.json())
