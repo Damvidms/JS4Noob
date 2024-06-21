@@ -5,7 +5,6 @@ $conn = new mysqli('localhost', 'root', '', 'js4noob');
 $id_ejercicio = $_POST['id'];
 $sql = "SELECT * FROM progreso WHERE id_usuario = $id";
 $result = $conn->query($sql);
-// Si hay resultados
 if ($result->num_rows > 0) {
     $sql_update = "UPDATE progreso SET id_ejercicio = $id_ejercicio WHERE id_usuario = $id";
     $conn->query($sql_update);
