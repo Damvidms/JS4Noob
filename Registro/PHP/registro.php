@@ -20,9 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Conexión fallida: " . $conn->connect_error);
     }
 
-    $queryCheckUser = "SELECT * FROM Usuario WHERE nickname = '$nickname'";
+    $queryCheckUser = "SELECT * FROM usuario WHERE nickname = '$nickname'";
     $resultCheckUser = $conn->query($queryCheckUser);
-    $queryCheckEmail = "SELECT * FROM Usuario WHERE correo = '$correo'";
+    $queryCheckEmail = "SELECT * FROM usuario WHERE correo = '$correo'";
     $resultCheckEmail = $conn->query($queryCheckEmail);
 
     if ($resultCheckUser->num_rows > 0) {
@@ -34,6 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($conn->query($query) === TRUE) {
             $_SESSION["nombreUsuario"] = $nickname;
+            $id = $conn->insert_id; // Obtener el valor de id autoincremental
+            $_SESSION["id"] = $id;
             echo json_encode(array("success" => true, "message" => "Registro exitoso"));
         } else {
             echo json_encode(array("success" => false, "message" => "Error al insertar datos: " . $conn->error));

@@ -6,19 +6,8 @@ const maxConfettis = 150;
 const particles = [];
 
 const possibleColors = [
-    "DodgerBlue",
-    "OliveDrab",
     "Gold",
-    "Pink",
-    "SlateBlue",
-    "LightBlue",
-    "Gold",
-    "Violet",
-    "PaleGreen",
-    "SteelBlue",
-    "SandyBrown",
-    "Chocolate",
-    "Crimson"
+    "Black"
 ];
 
 function randomFromTo(from, to) {

@@ -5,6 +5,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nickname = $_POST["username"];
     $contrasenya = $_POST["password"];
 
+    $_SESSION["username"] = $nickname;
+
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -23,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $row = $result->fetch_assoc();
         $hashContrasenya = $row["contrasenya"];
+        $_SESSION["id"] = $row["id"];
 
         if (password_verify($contrasenya, $hashContrasenya)) {
 
