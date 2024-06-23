@@ -109,7 +109,7 @@ fetch("../PHP/progresoActual.php", {
             progreso.forEach(element => {
 
                 let id = element.getAttribute("id")
-                if (id == "progreso") {
+                if (id == "progresos") {
                     console.log(id)
                     let name = element.getAttribute("name");
                     console.log(name)
