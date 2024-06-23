@@ -190,3 +190,42 @@ button:hover {
     background-color: #000000;
     color: #fffb00;
 }
+
+@media only screen and (max-width: 768px) {
+    /* Ajustes para la pantalla de móvil */
+    
+    .top-header {
+      display: none; /* Desactiva el top-header en dispositivos móviles */
+    }
+
+    .logo img {
+        width: 80px; /* Aumenta el ancho del logo de JS */
+        height: 80px; /* Aumenta la altura del logo de JS */
+        margin-right: 40px;
+      }
+      
+      .search {
+        display: none; /* Quita el icono de lupa */
+      }
+    
+    .login-container {
+      width: 80%;
+      padding: 1em;
+      margin: 30px;
+    }
+    
+    .header {
+      height: auto;
+      padding: 1em;
+      background-color: #000000;
+      text-align: center;
+    }
+    
+    .nav-list {
+      flex-direction: row;
+    }
+    
+    .nav-item {
+      margin-bottom: 1em;
+    }
+  }
