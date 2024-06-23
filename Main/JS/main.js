@@ -10,7 +10,7 @@ fetch("../PHP/main.php", {
         data.forEach(element => {
             let cajaSeccion = document.createElement("label")
             cajaSeccion.textContent = element.seccion
-            cajaSeccion.setAttribute("id", "progreso")
+            cajaSeccion.setAttribute("id", "progresos")
             cajaSeccion.setAttribute("name", element.id)
             progresoArea.append(cajaSeccion);
 

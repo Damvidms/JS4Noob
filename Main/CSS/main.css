@@ -31,6 +31,14 @@ img {
     border-radius: 10px;
 }
 
+#progresos {
+    border: 2px solid #fffb00;
+    color: white;
+    padding: 10px;
+    font-size: medium;
+    border-radius: 10px;
+}
+
 #ejercicio {
     border: 2px solid #fffb00;
     color: white;
@@ -237,3 +245,112 @@ img {
 .search {
     justify-self: end;
 }
+
+@media only screen and (max-width: 768px) {
+    /* Ajustes para la pantalla de móvil */
+    .grid-container {
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.5fr auto;
+        grid-row-gap: 1
+
+    }
+
+    #progreso {
+
+        display: flex;
+        flex-wrap: wrap;
+        height: 150px;
+        overflow:scroll;
+      }
+      
+      
+      #progreso label:first-child {
+      
+        width: 100%; /* ocupa toda la fila */
+        margin-top: 5px;
+        margin-bottom: 10px; /* espacio entre el primer label y los demás */
+      
+      }
+      
+      
+      #progreso label:not(:first-child) {
+      
+        width: 100px; /* ancho para los elementos restantes */
+        height: 42px;
+        margin: 10px;
+        overflow: hidden;
+      
+      }
+
+      #ejercicios {
+
+        display: flex;
+        flex-direction: column;
+        overflow:scroll;
+        justify-content: center;
+      }
+      
+      
+      #ejercicios label:first-child {
+      
+        width: 100%; /* ocupa toda la fila */
+        margin-bottom: 30px; /* espacio entre el primer label y los demás */
+      
+      }
+      
+      
+      #ejercicios label:not(:first-child) {
+        width: 88%;
+        overflow: hidden;
+        margin: 10px;
+        justify-self: center;
+      
+      }
+    .item1 {
+        grid-column: 1;
+        grid-row: 1;
+        
+    }
+    
+    .item2 {
+        grid-column: 1;
+        grid-row: 2;
+    
+    }
+    
+    
+    .item4 {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .top-header {
+      display: none; /* Desactiva el top-header en dispositivos móviles */
+    }
+
+    .logo img {
+        width: 80px; /* Aumenta el ancho del logo de JS */
+        height: 80px; /* Aumenta la altura del logo de JS */
+        margin-right: 40px;
+      }
+      
+      .search {
+        display: none; /* Quita el icono de lupa */
+      }
+    
+    .header {
+      height: auto;
+      padding: 1em;
+      background-color: #000000;
+      text-align: center;
+    }
+    
+    .nav-list {
+      flex-direction: row;
+    }
+    
+    .nav-item {
+      margin-bottom: 1em;
+    }
+  }
