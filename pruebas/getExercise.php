@@ -11,15 +11,16 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: ". $conn->connect_error);
 }
-
-$sql = "SELECT id, seccion, descripcion, funcName, input, output FROM ejercicio WHERE id = 1"; // Ajusta según sea necesario
+//Se hace una consulta sql para sacar la informacion de el ejercicio
+$sql = "SELECT id, seccion, descripcion, funcName, input, output FROM ejercicio WHERE id = 1";
 $result = $conn->query($sql);
+//si el numero de filas es mayor de 0 signnifica que algo esta devolviendo
 if ($result->num_rows > 0) {
 
     $row = $result->fetch_assoc();
 
     if (!empty($row['input']) &&!empty($row['output'])) {
-
+        //sacamos la informacion del ejercicio y la formateamos en un array
         $exercise = array(
 
             'id' => $row['id'],
@@ -29,7 +30,8 @@ if ($result->num_rows > 0) {
             'input' => json_encode($row['input']), // Codificar input como JSON
             'output' => $row['output'],
             'testCases' => array(
-                array('input' => json_encode($row['input']), 'output' => $row['output']) // Codificar input como JSON
+                array('input' => json_encode($row['input']), 'output' => $row['output']) 
+                // Codificar input como JSON
             )
         );
     } else {

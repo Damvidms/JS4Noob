@@ -115,10 +115,8 @@ img {
 .grid-container {
     display: grid;
     place-items: center;
-    /* Centra el contenido dentro de la cuadrícula */
     width: 100%;
     height: 100%;
-    /* Fondo semitransparente */
     padding: 20px;
     box-sizing: border-box;
 }
@@ -148,7 +146,6 @@ img {
 label {
     font-weight: bold;
     text-align: justify;
-    /* Centra el texto dentro del label */
     color: white;
 }
 
