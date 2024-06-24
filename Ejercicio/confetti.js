@@ -2,14 +2,14 @@
 let W = window.innerWidth;
 let H = window.innerHeight;
 // Elemento canvas y contexto 2D
-const canvas = document.getElementById("canvas");
-const context = canvas.getContext("2d");
+let canvas = document.getElementById("canvas");
+let context = canvas.getContext("2d");
 // Número máximo de confettis
-const maxConfettis = 150;
+let maxConfettis = 150;
 // Array para almacenar los objetos confetti
-const particles = [];
+let particles = [];
 // Colores posibles para los confettis
-const possibleColors = [
+let possibleColors = [
     "Gold",
     "Black"
 ];
