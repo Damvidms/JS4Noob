@@ -15,7 +15,17 @@ body {
     overflow: scroll;
 
 }
-
+li {
+    display: flex;
+    align-items: center; 
+  }
+  
+  li img {
+    height: 30px;
+    width: 30px;
+    border: 0px solid;
+    margin-right: 10px;
+  }
 
 img {
     height: 50px;
