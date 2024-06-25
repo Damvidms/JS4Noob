@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($conn->query($query) === TRUE) {
             $_SESSION["nombreUsuario"] = $nickname;
-            $id = $conn->insert_id; // Obtener el valor de id autoincremental
+            $id = $conn->insert_id; 
             $_SESSION["id"] = $id;
             echo json_encode(array("success" => true, "message" => "Registro exitoso"));
         } else {

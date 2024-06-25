@@ -82,11 +82,8 @@ img {
 .sinborde3 {
     border: 0px solid transparent;
     width: 100%;
-    /* La imagen ocupa todo el ancho del div */
     height: 100%;
-    /* La imagen ocupa todo el alto del div */
     object-fit: cover;
-    /* La imagen se ajusta para cubrir el div sin distorsión */
     display: block;
 }
 
@@ -174,14 +171,9 @@ img {
 }
 
 .neon-border {
-
-    /* Alto del div */
     background-color: black;
-    /* Color de fondo */
     border-radius: 20px;
-    /* Radio de borde para suavizar las esquinas */
     box-shadow: 0 0 10px #ffea00, 0 0 20px #ffea00, 0 0 30px #ffea00, 0 0 40px #ffea00;
-    /* Propiedad de sombra para el efecto de neón */
 }
 
 .grid-container {
@@ -257,17 +249,13 @@ img {
 }
 
 @media only screen and (max-width: 768px) {
-    /* Ajustes para la pantalla de móvil */
     .grid-container {
-
         grid-template-columns: 1fr;
         grid-template-rows: 0.2fr 0.5fr auto;
         grid-row-gap: 1
-
     }
 
     #progreso {
-
         display: flex;
         flex-wrap: wrap;
         height: 150px;
@@ -276,17 +264,16 @@ img {
       
       
       #progreso label:first-child {
-      
-        width: 100%; /* ocupa toda la fila */
+        width: 100%; 
         margin-top: 5px;
-        margin-bottom: 10px; /* espacio entre el primer label y los demás */
+        margin-bottom: 10px; 
       
       }
       
       
       #progreso label:not(:first-child) {
       
-        width: 100px; /* ancho para los elementos restantes */
+        width: 100px; 
         height: 42px;
         margin: 10px;
         overflow: hidden;
@@ -304,8 +291,8 @@ img {
       
       #ejercicios label:first-child {
       
-        width: 100%; /* ocupa toda la fila */
-        margin-bottom: 30px; /* espacio entre el primer label y los demás */
+        width: 100%; 
+        margin-bottom: 30px; 
       
       }
       
@@ -336,17 +323,17 @@ img {
     }
 
     .top-header {
-      display: none; /* Desactiva el top-header en dispositivos móviles */
+      display: none; 
     }
 
     .logo img {
-        width: 80px; /* Aumenta el ancho del logo de JS */
-        height: 80px; /* Aumenta la altura del logo de JS */
+        width: 80px; 
+        height: 80px; 
         margin-right: 40px;
       }
       
       .search {
-        display: none; /* Quita el icono de lupa */
+        display: none;
       }
     
     .header {

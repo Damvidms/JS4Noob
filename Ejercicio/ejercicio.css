@@ -182,23 +182,16 @@ textarea {
 
 .neon-label {
   font-size: 30px;
-  /* Tamaño de fuente del texto */
   color: #000000;
-  /* Color del texto */
   text-shadow: 0 0 10px #ffea00, 0 0 20px #ffea00, 0 0 30px #ffea00, 0 0 40px;
-  /* Propiedad de sombra para el efecto de neón */
   margin-top: 20px;
 }
 
 .neon-border {
-  /* Alto del div */
   background-color: black;
-  /* Color de fondo */
   border-radius: 20px;
-  /* Radio de borde para suavizar las esquinas */
   box-shadow: 0 0 10px #ffea00, 0 0 20px #ffea00, 0 0 30px #ffea00,
     0 0 40px #ffea00;
-  /* Propiedad de sombra para el efecto de neón */
 }
 
 .grid-container {
@@ -267,7 +260,6 @@ textarea {
 }
 
 @media only screen and (max-width: 768px) {
-  /* Ajustes para la pantalla de móvil */
   .grid-container {
     grid-template-columns: 1fr;
     grid-template-rows: 0.2fr auto 0.2fr;
@@ -280,7 +272,7 @@ textarea {
   }
 
   .item1 label {
-    font-size: 18px; /* Cambia el tamaño de texto a 18px */
+    font-size: 18px;
   }
 
   .item2 {
@@ -304,7 +296,7 @@ textarea {
   }
 
   .search {
-    display: none; /* Quita el icono de lupa */
+    display: none; 
   }
 
   .header {

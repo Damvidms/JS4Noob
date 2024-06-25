@@ -65,11 +65,8 @@ img {
 .sinborde3 {
     border: 0px solid transparent;
     width: 100%;
-    /* La imagen ocupa todo el ancho del div */
     height: 100%;
-    /* La imagen ocupa todo el alto del div */
     object-fit: cover;
-    /* La imagen se ajusta para cubrir el div sin distorsión */
     display: block;
 }
 
@@ -234,7 +231,6 @@ img {
 }
 
 @media only screen and (max-width: 768px) {
-    /* Ajustes para la pantalla de móvil */
     .grid-container {
 
         height: 80%;
@@ -250,17 +246,17 @@ img {
     }
     
     .top-header {
-      display: none; /* Desactiva el top-header en dispositivos móviles */
+      display: none;
     }
 
     .logo img {
-        width: 80px; /* Aumenta el ancho del logo de JS */
-        height: 80px; /* Aumenta la altura del logo de JS */
+        width: 80px;
+        height: 80px;
         margin-right: 40px;
       }
       
       .search {
-        display: none; /* Quita el icono de lupa */
+        display: none;
       }
     
     .header {
